@@ -20,8 +20,6 @@ static void copyVP9PicParam(NVContext *ctx, NVBuffer* buffer, CUVIDPICPARAMS *pi
 
     picParams->CodecSpecific.vp9.profile = buf->profile;
     picParams->CodecSpecific.vp9.frameContextIdx = buf->pic_fields.bits.frame_context_idx;
-
-    picParams->CodecSpecific.vp9.frameContextIdx = buf->pic_fields.bits.frame_context_idx;
     picParams->CodecSpecific.vp9.frameType = buf->pic_fields.bits.frame_type;
     picParams->CodecSpecific.vp9.showFrame = buf->pic_fields.bits.show_frame;
     picParams->CodecSpecific.vp9.errorResilient = buf->pic_fields.bits.error_resilient_mode;
