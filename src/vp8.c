@@ -49,7 +49,7 @@ static void copyVP8SliceData(NVContext *ctx, NVBuffer* buf, CUVIDPICPARAMS *picP
         
         bool isKeyFrame = (picParams->CodecSpecific.vp8.vp8_frame_tag.frame_type == 0);
         // Keyframe: need sync code 0x9d012a
-        if (isKeyFrame && (sliceData[3] == 0x9d || sliceData[4] == 0x01 || sliceData[5] == 0x2a) && ctx->firstKeyframeValid == false)
+        if (isKeyFrame && (sliceData[3] == 0x9d && sliceData[4] == 0x01 && sliceData[5] == 0x2a) && ctx->firstKeyframeValid == false)
             ctx->firstKeyframeValid = true;
         
         if (ctx->firstKeyframeValid == false)
